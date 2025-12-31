@@ -1,0 +1,74 @@
+.main-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    min-height: 70vh;
+}
+
+.login-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-header {
+    background-color: #4169E1;
+    color: white;
+    padding: 20px;
+    font-size: 20px;
+}
+
+.login-body {
+    padding: 30px;
+}
+
+.form-group {
+    margin-top: 20px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    padding-bottom: 5px;
+}
+
+.form-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    color: #333;
+}
+
+.form-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 8px 0;
+    font-size: 14px;
+    color: #666;
+    border-bottom: 1px solid #333;
+}
+
+.form-input::placeholder {
+    color: #999;
+}
+
+.submit-btn {
+    background-color: #4169E1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 30px;
+    font-size: 14px;
+    cursor: pointer;
+    float: right;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.submit-btn:hover {
+    background-color: #3454b4;
+}

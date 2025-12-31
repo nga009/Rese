@@ -1,0 +1,153 @@
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+.shop-header {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.shop-header h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #059669;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s;
+    cursor: pointer;
+    border: none;
+    display: inline-block;
+}
+
+.btn-editshop,
+.btn-course,
+.btn-reservation,
+.btn-sendmail,
+.btn-qrcode {
+    background-color: #059669;
+    color: white;
+}
+
+.btn-editshop:hover,
+.btn-course:hover,
+.btn-reservation:hover,
+.btn-sendmail:hover,
+.btn-qrcode:hover {
+    background-color: #047857;
+}
+
+.btn-danger {
+    background-color: #dc2626;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #b91c1c;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.card-header {
+    background-color: #f9fafb;
+    padding: 1.5rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.card-header h3 {
+    font-size: 1.3rem;
+    color: #111827;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.shop-info {
+    margin-bottom: 1rem;
+}
+
+.shop-info dt {
+    font-weight: 600;
+    color: #6b7280;
+    margin-bottom: 0.25rem;
+}
+
+.shop-info dd {
+    margin-bottom: 1rem;
+    color: #111827;
+}
+
+.reservation-list {
+    list-style: none;
+}
+
+.reservation-item {
+    padding: 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    margin-bottom: 0.75rem;
+}
+
+.reservation-item:last-child {
+    margin-bottom: 0;
+}
+
+.reservation-time {
+    font-weight: 600;
+    color: #059669;
+    margin-bottom: 0.5rem;
+}
+
+.reservation-user {
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+
+.empty-state {
+    text-align: center;
+    color: #6b7280;
+    padding: 2rem;
+}
+
+@media (max-width: 768px) {
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}

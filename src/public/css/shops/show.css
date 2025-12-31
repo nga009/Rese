@@ -1,0 +1,237 @@
+.content-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px;
+    display: flex;
+    gap: 60px;
+}
+
+.shop-detail {
+    flex: 1;
+}
+
+.shop-detail-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+
+.shop-name {
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.shop-image {
+    width: 100%;
+    max-width: 650px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.shop-tags {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.shop-description {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #333;
+}
+
+.reservation-section {
+    flex: 0 0 500px;
+}
+
+.reservation-card {
+    background: #4169E1;
+    border-radius: 8px;
+    padding: 40px 40px 0 40px;
+    color: white;
+}
+
+.reservation-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-input,
+.form-select {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+}
+
+.reservation-summary {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    padding: 25px;
+    margin: 30px 0;
+}
+
+.summary-row {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.summary-row:last-child {
+    margin-bottom: 0;
+}
+
+.summary-label {
+    width: 100px;
+    font-weight: normal;
+}
+
+.summary-value {
+    font-weight: normal;
+}
+
+.reservation-submit {
+    margin-left: -40px;
+    margin-right: -40px;
+    margin-top: 30px;
+}
+
+.submit-btn {
+    width: 100%;
+    background-color: #0047AB;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 0 0 8px 8px;
+    margin-top: 0;
+}
+
+.submit-btn:hover {
+    background-color: #003380;
+}
+
+/* コース選択用の追加スタイル */
+.course-section {
+    margin-bottom: 1rem;
+}
+
+.course-section-title {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.course-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.course-option {
+    padding: 0.75rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+    background-color: #fff;
+}
+
+.course-option:hover {
+    border-color: #315dff;
+    background-color: #f0f7ff;
+}
+
+.course-option.selected {
+    border-color: #315dff;
+    background-color: #e6f0ff;
+}
+
+.course-option input[type="radio"] {
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+
+.course-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.25rem;
+}
+
+.course-name {
+    font-weight: 600;
+    color: #111827;
+    font-size: 0.95rem;
+}
+
+.course-price {
+    color: #315dff;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-top: 0.25rem;
+}
+
+.course-description {
+    color: #6b7280;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin-top: 0.5rem;
+}
+
+.total-amount-display {
+    margin-top: 0.75rem;
+    padding: 0.75rem;
+    background: linear-gradient(135deg, #e6f0ff 0%, #f0f7ff 100%);
+    border-radius: 4px;
+    text-align: center;
+    display: none;
+}
+
+.total-amount-display.show {
+    display: block;
+}
+
+.total-amount-label {
+    color: #6b7280;
+    font-size: 0.85rem;
+    margin-bottom: 0.25rem;
+}
+
+.total-amount-value {
+    color: #315dff;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.submit-btn.with-payment {
+    background: linear-gradient(135deg, #315dff 0%, #527cff 100%);
+}
+
+.submit-btn.with-payment:hover {
+    background: linear-gradient(135deg, #2850e6 0%, #4169e6 100%);
+}
+
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    .reservation-section {
+        flex: 1;
+    }
+}

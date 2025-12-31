@@ -1,0 +1,138 @@
+.search-bar-wrapper {
+    max-width: 1400px;
+    padding: 20px 40px 0;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -80px;
+}
+
+.search-bar {
+    max-width: 600px;
+    margin: 0;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.search-select {
+    padding: 8px 12px;
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    outline: none;
+}
+
+.search-divider {
+    width: 1px;
+    height: 24px;
+    background-color: #ddd;
+}
+
+.search-icon {
+    width: 20px;
+    height: 20px;
+    color: #999;
+}
+
+.search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+.search-input::placeholder {
+    color: #999;
+}
+
+.shops-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.shops-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.shop-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.shop-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.shop-info {
+    padding: 20px;
+}
+
+.shop-name {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.shop-tags {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.shop-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.detail-btn {
+    background-color: #4169E1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 24px;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.detail-btn:hover {
+    background-color: #3454b4;
+}
+
+.favorite-form {
+    display: inline;
+}
+
+.favorite-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 28px;
+    color: #ddd;
+}
+
+.favorite-btn.active {
+    color: #ff0000;
+}
+
+@media (max-width: 768px) {
+    .search-bar-wrapper {
+        margin: 0 auto;
+    }
+
+}
