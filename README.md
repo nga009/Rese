@@ -82,17 +82,19 @@ CVC: 任意の3桁（例：123）
 ```
 
 ## 登録済テストユーザー
+``` text
 管理者
 name: 管理者 
 email: admin@example.com  
 password: password  
 
+
 店舗代表者
 name: 仙人 
 email: sennin@example.com  
 password: password  
--------------------------
+
 name: 牛助 
 email: gyusuke@example.com  
 password: password  
--------------------------
+```
