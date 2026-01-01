@@ -23,7 +23,7 @@ class SendEmailRequest extends FormRequest
     {
         return [
             'target' => ['required', 'in:past,tomorrow,today'],
-            'subject' => ['required', 'string', 'max:255'],
+            'subject' => ['required', 'string', 'max:191'],
             'message' => ['required', 'string', 'max:2000'],
         ];
     }

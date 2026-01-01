@@ -22,7 +22,7 @@ class UpdateShopRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'string', 'max:191'],
             'area_id' => ['required', 'exists:areas,id'],
             'genre_id' => ['required', 'exists:genres,id'],
             'description' => ['required', 'string', 'max:1000'],

@@ -128,6 +128,14 @@ body {
     margin-top: 0.25rem;
 }
 
+.error-message:first-child {
+    margin-top: 0;
+}
+
+.error-message:last-child {
+    margin-bottom: 0;
+}
+
 .back-button {
     background: white;
     border: none;

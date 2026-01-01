@@ -34,7 +34,6 @@ Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $requ
     // 認証完了画面へ
     return redirect()->route('verification.done');
 })->middleware(['signed', 'throttle:6,1'])->name('verification.verify');
-// Route::view('/email/verified/done', 'auth.verify-done')->name('verification.done');
 Route::view('/thanks', 'auth.verify-done')->name('verification.done');
 
 // 一般ユーザー用ルート
@@ -48,12 +47,11 @@ Route::middleware(['auth', 'role:user', 'verified'])->group(function () {
         ->name('reservations.edit');
     Route::put('/reservations/{reservation}', [ReservationController::class, 'update'])
         ->name('reservations.update');    
-
     
     Route::post('/favorites/{shop}', [FavoriteController::class, 'toggle'])->name('favorites.toggle');
     Route::post('/reviews/{reservation}', [ReviewController::class, 'store'])->name('reviews.store');
 
-    // 決済ルート（認証ユーザー）
+    // 決済ルート
     Route::post('/payment/checkout', [PaymentController::class, 'createCheckoutSession'])->name('payment.checkout');
     Route::get('/payment/success/{reservation}', [PaymentController::class, 'success'])->name('payment.success');
     Route::get('/payment/cancel/{reservation}', [PaymentController::class, 'cancel'])->name('payment.cancel');
@@ -77,41 +75,33 @@ Route::middleware(['auth', 'role:shop'])->prefix('shop')->name('shop.')->group(f
     // 店舗作成
     Route::get('/shops/create', [ShopOwnerController::class, 'create'])->name('shops.create');
     Route::post('/shops', [ShopOwnerController::class, 'store'])->name('shops.store');
-    
-    // 店舗詳細・編集・削除（店舗IDが必要）
-    Route::get('/shops/{shop}', [ShopOwnerController::class, 'show'])->name('shops.show');
-    Route::get('/shops/{shop}/edit', [ShopOwnerController::class, 'edit'])->name('shops.edit');
-    Route::put('/shops/{shop}', [ShopOwnerController::class, 'update'])->name('shops.update');
-    Route::delete('/shops/{shop}', [ShopOwnerController::class, 'destroy'])->name('shops.destroy');
-    
-    // 予約管理（店舗IDが必要）
-    Route::get('/shops/{shop}/reservations', [ShopOwnerController::class, 'reservations'])->name('reservations.index');
-    
-    // メール送信（店舗IDが必要）
-    Route::get('/shops/{shop}/emails/create', [EmailController::class, 'create'])->name('emails.create');
-    Route::post('/shops/{shop}/emails/send', [EmailController::class, 'send'])->name('emails.send');
 
-    // コース管理
     Route::prefix('shops/{shop}')->group(function () {
+        // 店舗詳細・編集・削除
+        Route::get('/', [ShopOwnerController::class, 'show'])->name('shops.show');
+        Route::get('/edit', [ShopOwnerController::class, 'edit'])->name('shops.edit');
+        Route::put('/', [ShopOwnerController::class, 'update'])->name('shops.update');
+        Route::delete('/', [ShopOwnerController::class, 'destroy'])->name('shops.destroy');
+
+        // 予約管理
+        Route::get('/reservations', [ShopOwnerController::class, 'reservations'])->name('reservations.index');
+        Route::get('/reservations/{reservation}', [ShopReservationController::class, 'show'])->name('reservations.show');
+
+        // QRコードスキャン
+        Route::get('/qr-scan', [ShopReservationController::class, 'scanQr'])->name('qr.scan');
+        Route::post('/qr-verify', [ShopReservationController::class, 'verifyQr'])->name('qr.verify');
+
+        // メール送信
+        Route::get('/emails/create', [EmailController::class, 'create'])->name('emails.create');
+        Route::post('/emails/send', [EmailController::class, 'send'])->name('emails.send');
+
+        // コース管理
         Route::get('/courses', [CourseController::class, 'index'])->name('courses.index');
         Route::get('/courses/create', [CourseController::class, 'create'])->name('courses.create');
         Route::post('/courses', [CourseController::class, 'store'])->name('courses.store');
         Route::get('/courses/{course}/edit', [CourseController::class, 'edit'])->name('courses.edit');
         Route::put('/courses/{course}', [CourseController::class, 'update'])->name('courses.update');
         Route::delete('/courses/{course}', [CourseController::class, 'destroy'])->name('courses.destroy');
-
-        // 予約詳細
-        Route::get('/reservations/{reservation}', [ShopReservationController::class, 'show'])->name('reservations.show');
-
-        // QRコードスキャン
-        Route::get('/qr-scan', [ShopReservationController::class, 'scanQr'])->name('qr.scan');
-        Route::post('/qr-verify', [ShopReservationController::class, 'verifyQr'])->name('qr.verify');
     });
 
 });
-
-/*
-Route::get('/', function () {
-    return view('auth.login');
-});
-*/
