@@ -71,8 +71,7 @@
                     </div>
                 </div>
 
-                <div class="button-group">
-                    <a href="{{ route('mypage') }}" class="cancel-link">キャンセル</a>
+                <div class="reservation-submit">
                     <button type="submit" class="submit-btn">予約を更新</button>
                 </div>
             </form>

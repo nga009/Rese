@@ -67,7 +67,7 @@
 .reservation-card {
     background: #4169E1;
     border-radius: 8px;
-    padding: 40px;
+    padding: 40px 40px 0 40px;
     color: white;
 }
 
@@ -116,14 +116,14 @@
     font-weight: normal;
 }
 
-.button-group {
-    display: flex;
-    gap: 10px;
-    margin-top: 20px;
+.reservation-submit {
+    margin-left: -40px;
+    margin-right: -40px;
+    margin-top: 30px;
 }
 
 .submit-btn {
-    flex: 1;
+    width: 100%;
     background-color: #0047AB;
     color: white;
     border: none;
@@ -131,29 +131,12 @@
     padding: 15px;
     font-size: 16px;
     cursor: pointer;
+    border-radius: 0 0 8px 8px;
+    margin-top: 0;
 }
 
 .submit-btn:hover {
     background-color: #003380;
-}
-
-.cancel-link {
-    flex: 1;
-    background-color: #6c757d;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 15px;
-    font-size: 16px;
-    cursor: pointer;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.cancel-link:hover {
-    background-color: #5a6268;
 }
 
 @media (max-width: 768px) {

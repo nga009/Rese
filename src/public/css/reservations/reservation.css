@@ -8,7 +8,7 @@
 .content-wrapper {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 40px;
     display: flex;
     gap: 60px;
 }
@@ -65,7 +65,13 @@
     color: white;
     border-radius: 8px;
     padding: 30px;
-    margin-bottom: 20px;
+}
+
+.reservation-card__after {
+    background: #4169E1;
+    color: white;
+    border-radius: 8px;
+    padding: 30px 30px 0 30px;
 }
 
 .reservation-header {
@@ -165,7 +171,11 @@
     padding-top: 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.3);
 }
-
+.review-submit {
+    margin-left: -30px;
+    margin-right: -30px;
+    margin-top: 30px;
+}
 .review-btn {
     background: white;
     color: #4169E1;

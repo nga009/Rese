@@ -108,7 +108,7 @@
         <!-- 来店後の予約 -->
         <div id="past-tab" class="tab-content">
             @forelse($pastReservations as $index => $reservation)
-            <div class="reservation-card">
+            <div class="reservation-card__after">
                 <div class="reservation-header">
                     <div class="reservation-number">
                         <svg class="clock-icon" fill="currentColor" viewBox="0 0 24 24">
@@ -182,7 +182,9 @@
                                     <label for="comment{{ $reservation->id }}">コメント</label>
                                     <textarea name="comment" id="comment{{ $reservation->id }}" rows="3" placeholder="ご感想をお聞かせください（400文字以内）">{{ old('reservation_id') == $reservation->id ? old('comment') : '' }}</textarea>
                                 </div>
-                                <button type="submit" class="submit-review-btn">レビューを投稿</button>
+                                <div class="review-submit">
+                                    <button type="submit" class="submit-review-btn">レビューを投稿</button>
+                                </div>
                             </form>
                         </div>
                     @endif
