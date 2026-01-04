@@ -29,6 +29,7 @@ COACHTECK課題
 
 ## アプリケーションURL
 - 開発環境：http://localhost/
+- AWS環境：http://52.192.173.161/
 - phpMyAdmin：http://localhost:8080/
 - mailhog：http://localhost:8025
 - Stripe公式サイト：https://stripe.com/jp
